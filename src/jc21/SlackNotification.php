@@ -12,6 +12,7 @@ class SlackNotification
 	protected $iconUrl     = null;
 	protected $iconEmoji   = null;
 	protected $attachments = [];
+	protected $timeout     = 30;
 
 
     /**
@@ -238,6 +239,31 @@ class SlackNotification
 	}
 
 
+	/**
+	 * setTimeout
+	 *
+	 * @access public
+	 * @param  int   $seconds
+	 * @return void
+	 */
+	public function setTimeout($seconds)
+	{
+		$this->timeout = intval($seconds);
+	}
+
+
+	/**
+	 * getTimeout
+	 *
+	 * @access public
+	 * @return int
+	 */
+	public function getTimeout()
+	{
+		return $this->timeout;
+	}
+
+
     /**
      * send
      *
@@ -289,8 +315,8 @@ class SlackNotification
 			CURLOPT_CUSTOMREQUEST  => 'POST',
 			CURLOPT_POSTFIELDS     => $json,
 			// Timeouts
-			CURLOPT_CONNECTTIMEOUT => 30,
-			CURLOPT_TIMEOUT        => 30,
+			CURLOPT_CONNECTTIMEOUT => $this->getTimeout(),
+			CURLOPT_TIMEOUT        => $this->getTimeout(),
 			// Fail for 400+
 			CURLOPT_FAILONERROR    => false,
 			// Follow "Location" headers
