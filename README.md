@@ -12,7 +12,7 @@ Slack Notifications from your PHP App
 curl -sS https://getcomposer.org/installer | php
 ```
 
-Next, run the Composer command to install the latest stable version of Guzzle:
+Next, run the Composer command to install the latest stable version:
 
 ```bash
 composer.phar require jc21/slack-notifications
@@ -25,6 +25,8 @@ require 'vendor/autoload.php';
 ```
 
 ### Using
+
+[Class documentation](docs/Documentation.md)
 
 See the tests folder for some examples, but basically here's how to use it:
 
