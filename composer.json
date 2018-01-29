@@ -3,7 +3,7 @@
     "description": "A PHP interface for sending Notifications to your Slack team",
     "keywords": ["slack", "notification"],
     "homepage": "https://github.com/jc21/slack-notifications",
-    "license": "BSD",
+    "license": "BSD-1-Clause",
     "authors": [
         {
             "name": "Jamie Curnow",
